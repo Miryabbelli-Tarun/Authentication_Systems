@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Register</h1>
+    <form action="{% url 'register_view' %}" method="POST">
+        {% csrf_token %}
+        {% if messages %}
+            {% for message in messages %}
+                {{message}}
+            {% endfor %}
+        {% endif %}
+        <label for="username">Name</label>
+        <input type="text" name="username" id="">
+        <label for="email">Email</label>
+        <input type="email" name="email" id="">
+        <label for="phone_number">Phone_number</label>
+        <input type="text" name="phone_number" id="">
+        <label for="password">password</label>
+        <input type="password" name="password" id="">
+        <button type="submit">Register</button>
+    </form>
+</body>
+</html>
