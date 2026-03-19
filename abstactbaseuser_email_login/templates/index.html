@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Welocome to the page  </h1> 
+    {% if messages %}
+            {% for message in messages %}
+                {{message}}
+            {% endfor %}
+        {% endif %}
+    <button><a href="{% url 'login_view' %}">Login</a></button>
+    <button><a href="{% url 'register_view' %}">Register</a></button>
+    <button><a href="{%url 'logout_view' %}">Logout</a></button>
+</body>
+</html>
